@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anonymous Project</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"/>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container" style="max-width: 1024px;">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title" style="margin-top: 100px; font-size: 3rem;">
+            NY-BENCH
+          </h1>
+
+          <div class="is-size-5 publication-title" style="margin-bottom: 20px;">
+            Now You See Me — Benchmarking Visual Permanence <br>
+            in Multi-Turn Image Editing
+          </div>
+
+          <div class="is-size-7 publication-authors" style="margin-bottom: 20px;">
+            <span class="author-block">
+              Anonymous<sup>1</sup>
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-medium is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-medium is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-medium is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+            </div>
+            
+            <div class="content has-text-centered" style="margin-top: 60px; margin-bottom: 30px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<section class="section">
+  <div class="container" style="max-width: 1024px;">
+    
+    <h2 class="title is-3 has-text-centered" style="margin-bottom: 20px; font-size: 28px;">The Challenge: Visual Permanence</h2>
+    
+    <div class="columns is-centered">
+      <div class="column is-four-fifths"> 
+        <div class="content has-text-justified" style="margin-top: 20px; font-size: 16px; line-height: 1.4;">
+          <p>
+            <b>Drag the slider to observe the Restoration Failure.</b>
+            The model(<i>Gemini-2.5-Flash-Image</i>) fails to recall the original Heart symbol after the occluded(<i>by flowers</i>) area has been revealed.
+          </p>
+        </div>
+        <div class="box" style="padding: 12px; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap:2px;">
+          <span style="background-color: #363636; color: white; padding: 6px 12px; border-radius: 6px; margin-right: 10px; vertical-align: middle; display: inline-flex; align-items: center;">
+            <span style="font-weight: 600; font-size: 0.6rem;">Edit</span>
+          </span>
+          <span class="tag is-medium is-white font-size: 0.8rem;" style="color: #4a4a4a;">
+            <b>Original</b>
+          </span>
+          <span class="icon has-text-grey-light font-size: 0.8rem;" style="margin: 0 2px;">
+            <i class="fas fa-arrow-right"></i>
+          </span>
+          <span class="tag is-medium is-white font-size: 0.8rem;" style="color: #4a4a4a;">
+            Turn 1: "Add flowers"
+          </span>
+          <span class="icon has-text-grey-light font-size: 0.8rem;" style="margin: 0 2px;">
+            <i class="fas fa-arrow-right"></i>
+          </span>
+          <span class="tag is-medium is-white font-size: 0.8rem;" style="color: #4a4a4a;">
+            Turn 2: "Change to a single flower"
+          </span>
+          <span class="icon has-text-grey-light font-size: 0.8rem;" style="margin: 0 2px;">
+            <i class="fas fa-arrow-right"></i>
+          </span>
+          <span class="tag is-medium is-white font-size: 0.8rem;" style="color: #4a4a4a;">
+            <b>Result</b>
+          </span>
+        </div>
+        <img-comparison-slider style="border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.2); overflow: hidden; margin-bottom: 40px;">
+          
+          <img slot="first" src="./static/images/image1.png" width="100%" />
+          <div slot="first" style="position: absolute; top: 15px; left: 15px; color: white; padding: 5px 10px; font-weight: bold; font-size: 16px;">
+            <b>Original</b> (Turn #0)
+          </div>
+          
+          <img slot="second" src="./static/images/image2.png" width="100%" />
+          <div slot="second" style="position: absolute; top: 15px; right: 15px; color: white; padding: 15px 10px; font-weight: bold; font-size: 16px;">
+            <b>Result</b> (Turn #2)
+          </div>
+
+          <svg slot="handle" xmlns="http://www.w3.org/2000/svg" width="100" viewBox="-8 -3 16 6">
+            <path stroke="#fff" d="M -5 -2 L -7 0 L -5 2 M -5 -2 L -5 2 M 5 -2 L 7 0 L 5 2 M 5 -2 L 5 2" stroke-width="1" fill="#fff" vector-effect="non-scaling-stroke"></path>
+          </svg>
+        </img-comparison-slider>
+        </div>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified" style="font-size: 16px; line-height: 1.4;">
+          <p>
+            Current multi-turn image editing frameworks suffer from two key consistency failures. 
+            First, models fail to <b>restore</b> an element after temporary occlusion—for example, a tattoo covered by a long sleeve. 
+            Second, models often fail to <b>preserve</b> consistency, unnecessarily altering regions outside the edit area. 
+            In this work, we focus on the <b>implicit visual consistency</b> needed to maintain both the memory of occluded content and the integrity of untouched regions.
+          </p>
+        </div>
+        <img src="./static/images/figure1.png" 
+             alt="Qualitative comparison of multi-turn editing"
+             style="width: 100%;"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width: 1024px;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-bottom: 40px; font-size: 28px;">Abstract</h2>
+        
+        <div class="content has-text-justified" style="font-size: 16px; line-height: 1.4;">
+          <p>
+            Maintaining consistency in multi-turn image editing is a critical challenge,
+            yet existing models often introduce user-unintended changes.
+            This failure ranges from gradual cumulative drift to catastrophic loss of object permanence under occlusion.
+            However, we lack a precise benchmark dedicated to quantifying consistency in multi-turn editing.
+          </p>
+          <p>
+            We fill this gap by proposing a new benchmark and dataset designed specifically for
+            multi-turn, occlusion-based editing scenarios.
+            Our benchmark evaluates models along two complementary axes:
+            (1) Explicit Instruction Faithfulness (IF) and
+            (2) Implicit Visual Consistency (VC), which captures the model's ability to preserve unedited regions
+            and recover previously occluded content across multiple turns.
+            Experiments on our benchmark show that SOTA models significantly fail these tests,
+            proving our benchmark is essential for developing truly robust models.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 0; margin-top: 20px;">
+  <div class="container" style="max-width: 1024px;">
+    <!-- Task Definition -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-bottom: 40px; font-size: 28px;">Task Definition</h2>
+        <h3 class="title is-4" style="font-weight: 300; font-size: 20px; font-style: italic; margin-bottom: 40px;">
+          "Now you see me... Now you don't... <br>
+          <span style="font-weight: bold; text-decoration: underline decoration-grey;">But can you see me again?</span>"
+        </h3> 
+        <div class="content has-text-centered">
+          <img src="./static/images/figure5.png"
+               alt="Dataset Construction Pipeline"
+               style="width: 100%; height: auto; border-radius: 10px;"/>
+        </div>
+        <div class="content has-text-justified" style="font-size: 16px; line-height: 1.4;">
+          <p>
+            We define a multi-turn image editing task grounded in an <b>Occlusion-Restoration</b> scenario. 
+            Starting from an original image, the first instruction adds an <i>occluder</i> that hides a specific object. 
+            The second instruction moves or removes the occluder, requiring the model to reveal the previously hidden object.
+          </p>
+          <p>
+            This scenario presents a dual challenge for generative models:
+          </p>
+          <ul>
+            <li>
+              <b>Explicit Instruction Faithfulness (IF):</b> 
+              The model must faithfully execute user instructions (e.g., adding or moving the box) within the specified bounding box.
+            </li>
+            <li>
+              <b>Implicit Visual Consistency (VC):</b> 
+              The model must preserve visual elements not explicitly mentioned. This consists of:
+              <ul>
+                <li><b>Restoration Fidelity:</b> Accurately recovering the occluded object to its original appearance.</li>
+                <li><b>Non-Target Preservation:</b> Maintaining the integrity of unedited background regions throughout the sequence.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Task Definition -->
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0; margin-top: 20px;">
+  <div class="container" style="max-width: 1024px;">
+    <!-- Dataset Construction -->
+    <div class="columns is-centered has-text-centered">  
+      <div class="column is-four-fifths"> 
+        <h2 class="title is-3" style="margin-bottom: 40px; font-size: 28px;">Dataset Construction</h2>
+        <div class="content has-text-centered">
+          <img src="./static/images/figure2.png"
+               alt="Dataset Construction Pipeline"
+               style="width: 100%; height: auto; border-radius: 10px;"/>
+        </div>
+        <div class="content has-text-justified" style="font-size: 16px; line-height: 1.4;">
+          <p>
+            We constructed the NY-BENCH dataset through a rigorous four-stage pipeline designed to assess implicit visual preservation. 
+            First, we curated 600 visually complex source images from diverse domains, containing distinct features suitable for occlusion. 
+            Second, utilizing Gemini-2.5-Pro, we generated two-turn occlusion-restoration scenarios, which were subsequently human-verified to yield 1,002 high-quality samples. 
+            Third, we produced precise spatial annotations for both the occludee and the occluder to ensure semantic validity across turns. 
+            Finally, high-fidelity Ground Truth (GT) sequences were synthesized using a parallel editing approach with Gemini-2.5-Flash-Image, and the final GT sequence incorporated precise manual correction to serve as the ideal reference for consistency evaluation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Dataset Construction -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width: 1024px;">
+    <div class="columns is-centered has-text-centered">
+      
+      <div class="column is-four-fifths"> 
+        <h2 class="title is-3" style="margin-bottom: 40px; font-size: 28px;">Evaluation Metrics</h2>
+        
+        <div class="columns is-centered" style="align-items: flex-start;"> 
+          
+          <div class="column is-6"> 
+            <div class="content has-text-centered">
+              <img src="./static/images/figure3.png"
+                   alt="Evaluation Pipeline"
+                   style="width: 100%; height: auto; border-radius: 10px;"/>
+            </div>
+          </div>
+          
+          <div class="column is-6">
+            <div class="content has-text-justified" style="font-size: 16px; line-height: 1.4;">
+              <p>
+                The Evaluation Pipeline assesses consistency across two orthogonal axes. 
+                <b>Explicit Instruction Faithfulness (IF)</b> uses an LLM-as-judge to quantify adherence to user commands (<i>P<sub>1</sub></i>, <i>P<sub>2</sub></i>), averaging turn-wise ratings into <i>S<sub>IF</sub></i>.
+              </p>
+              <p>
+                <b>Implicit Visual Consistency (VC)</b> is the central metric, capturing the model's adherence to "silently preserved" constraints using segmentation masks (<i>M<sub>1</sub></i>, <i>M<sub>2</sub></i>). It comprises two components:
+              </p>
+              <ul>
+                <li>
+                  <b>Restoration Fidelity (<i>VC<sub>restore</sub></i>):</b> Measures reconstruction of the "reveal region" (M<sub>1</sub> \ M<sub>2</sub></i>) using normalized PSNR and LPIPS.
+                </li>
+                <li>
+                  <b>Non-Target Preservation (<i>VC<sub>preserve</sub></i>):</b> Assesses the stability of background pixels (1 - (M<sub>1</sub> &cup; M<sub>2</sub>)</i>) unaffected by either instruction.
+                </li>
+              </ul>
+              <p>
+                The final metric integrates these axes via the product:
+                <br>
+                <span style="display: block; text-align: center; margin-top: 5px; font-weight: bold;">
+                  Final Score = <i>S<sub>IF</sub></i> × <i>S<sub>VC</sub></i>
+                </span>
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width: 1024px;">
+    <!-- Experiments -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-bottom: 40px; font-size: 28px;">Experiments</h2>
+        <div class="content has-text-justified">
+          <h4 class="title is-4 mt-5" style="text-align: center; color: #666;">
+            Quantitative Results
+          </h4>
+          <div class="content has-text-justified" style="font-size: 16px; line-height: 1.4;">
+            <p>
+              Our quantitative evaluation reveals that all baseline models exhibit substantially 
+              lower restoration performance compared to Ground Truth, 
+              indicating current SOTA models struggle with accurately remembering and restoring 
+              occluded content.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="./static/images/table1.png"
+                alt="Model-wise Evluation Results"
+                style="width: 100%; height: auto; border-radius: 10px;"/>
+          </div>
+
+          <h4 class="title is-4" style="text-align: center; color: #666; margin-top: 40px;">
+            Analysis of Conditional Restoration
+          </h4>
+          <div class="columns is-vcentered">
+            <div class="column is-6">
+              <div class="content has-text-centered">
+                <img src="./static/images/table2.png"
+                    alt="Model-wise Evaluation Results"
+                    style="width: 100%; height: auto;"/>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <p style="margin-bottom: 0;">
+                A quadrant analysis reveals that Restoration Fidelity is strictly 
+                conditional on both Instruction Faithfulness and Non-Target Preservation. 
+                High restoration is only achievable when both metrics are high; 
+                failure in either axis causes a significant performance collapse.
+              </p>
+            </div>
+          </div>
+
+          <h4 class="title is-4" style="text-align: center; color: #666; margin-top: 40px;">
+            Human Evaluation and Metric Validation
+          </h4>
+          <div class="columns is-vcentered" style="margin-bottom: 20px;">
+            <div class="column is-5">
+              <div class="content has-text-centered">
+                <img src="./static/images/table3.png"
+                    alt="Overall Automatic Metric Quadrant Statistics"
+                    style="width: 100%; height: auto;"/>
+              </div>
+            </div>
+            <div class="column is-7">
+              <div class="content has-text-justified" style="font-size: 16px; line-height: 1.4;">
+                <p style="margin-bottom: 0;">
+                  Human evaluation mirrors the conditional pattern: high restoration scores are observed 
+                  only in the <b>High-IF / High-Preserve</b> quadrant. This confirms that humans also 
+                  perceive restoration as an ability strictly dependent on both prerequisites succeeding.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-vcentered" style="margin-bottom: 40px;">
+            <div class="column is-5">
+              <div class="content has-text-centered">
+                <img src="./static/images/table4.png"
+                    alt="Metric Quadrant Statistics"
+                    style="width: 100%; height: auto;"/>
+              </div>
+            </div>
+            <div class="column is-7">
+              <div class="content has-text-justified" style="font-size: 16px; line-height: 1.4;">
+                <p style="margin-bottom: 0;">
+                  Validation against human judgment reveals near-perfect alignment 
+                  specifically within the <b>High-IF / High-Preserve</b> subset. 
+                  This proves our metric faithfully captures human perception in scenarios where 
+                  restoration is validly defined.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="content has-text-centered">
+                <img src="./static/images/figure6.png"
+                    alt="Overall Automatic Metric Quadrant Statistics"
+                    style="width: 100%; height: auto;"/>
+          </div>
+          <p>
+            <b>Why Mask-Based Metrics Matter:</b> The figure highlights the limitations of standard global metrics. 
+            In the qualitative example, the model fails to recover the person on the bench in Turn 2 after they were temporarily occluded by the plant in Turn 1.
+          </p>
+          <p>
+            Despite this significant structural failure, global metrics like <b>CLIP-I</b> show a negligible difference (0.04) compared to the Ground Truth. 
+            In contrast, our <b>Restoration Fidelity (<i>VC<sub>restore</sub></i>)</b> accurately penalizes this loss of object permanence, revealing a drastic performance gap.
+          </p>
+      </div>
+    </div>
+    <!--/ Experiments -->
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container content" style="max-width: 1024px;">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{anonymous2026,
+  author    = {Anonymous},
+  title     = {NY-BENCH: Now You See Me — Benchmarking Visual Permanence in Multi-Turn Image Editing},
+  journal   = {Under Review},
+  year      = {2026},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
